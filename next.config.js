@@ -12,7 +12,7 @@
 
 module.exports = {
   images: {
-    domains: ["via.placeholder.com"],
-    // formats: ["image/webp"],
+    domains: ["reqres.in"],
+    formats: ["image/png"],
   }
 };

@@ -7,10 +7,10 @@ export default function Home({data}) {
   return (
     <>
   {data.map((item)=>(
-    <>
-    <p>{item.title}</p>
-    <Image src={item.url} height={200} width={200} alt={item.title} />
-    </>
+    <div key={item.id}>
+    <p>{item.first_name}</p>
+    <img src={item.avatar} height={200} width={200} alt={item.title} />
+    </div>
   ))}
     </>
   )
@@ -18,11 +18,22 @@ export default function Home({data}) {
 
 export async function getServerSideProps(){
     // Fetch data from external API
-    const res = await fetch
-    (`https://jsonplaceholder.typicode.com/photos?_limit=10`)
+    const res = await fetch(`https://reqres.in/api/users?page=2`)
     const data = await res.json();
+    // console.log(data.data);
 
     return{
-      props:{data:data}
+      props:{data:data.data}
     }
+}
+
+export async function getSta(){
+  // Fetch data from external API
+  const res = await fetch(`https://reqres.in/api/users?page=2`)
+  const data = await res.json();
+  // console.log(data.data);
+
+  return{
+    props:{data:data.data}
+  }
 }
