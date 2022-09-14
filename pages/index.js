@@ -19,7 +19,7 @@ export default function Home({data}) {
 export async function getServerSideProps(){
     // Fetch data from external API
     const res = await fetch
-    (`https://jsonplaceholder.typicode.com/photos `)
+    (`https://jsonplaceholder.typicode.com/photos?_limit=10`)
     const data = await res.json();
 
     return{
