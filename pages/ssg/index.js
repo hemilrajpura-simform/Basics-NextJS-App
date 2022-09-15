@@ -1,6 +1,5 @@
 // import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 export default function Home({data}) {
   console.log(data)
@@ -15,15 +14,6 @@ export default function Home({data}) {
     </>
   )
 }
-
-// export async function getServerSideProps(){
-//     // Fetch data from external API
-//     const res = await fetch(`https://jsonplaceholder.typicode.com/photos`)
-//     const data = await res.json();
-//     return{
-//       props:{data:data},
-//     }
-// }
 
 export async function getStaticProps(){
   // Fetch data from external API
