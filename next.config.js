@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["reqres.in"],
-    formats: ["image/webp"],
+    domains: ["via.placeholder.com"],
+    // formats: ["image/webp"],
   }
 };

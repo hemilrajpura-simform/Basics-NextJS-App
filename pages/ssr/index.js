@@ -8,7 +8,7 @@ export default function Home({data}) {
   {data.map((item)=>(
     <div key={item.id}>
     {/* <p>{item.title}</p>  */}
-    <img src={item.url} height={200} width={200} alt={item.title} />
+    <Image src={item.url+".jpg"} height={200} width={200} alt={item.title} />
     </div>
   ))}
     </>
