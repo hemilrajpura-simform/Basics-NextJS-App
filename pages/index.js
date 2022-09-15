@@ -1,35 +1,13 @@
-// import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
-export default function Home({data}) {
+export default function Home({ data }) {
   console.log(data)
   return (
     <>
-  {data.map((item)=>(
-    <div key={item.id}>
-    {/* <p>{item.title}</p>  */}
-    <img src={item.url} height={200} width={200} alt={item.title} />
-    </div>
-  ))}
+      <Link href="/ssr"> click here for fetching data by SSR(server side)</Link>
+      <Link href="/ssg"> click here for fetching data by SSG(static)</Link>
     </>
   )
 }
 
-// export async function getServerSideProps(){
-//     // Fetch data from external API
-//     const res = await fetch(`https://jsonplaceholder.typicode.com/photos`)
-//     const data = await res.json();
-//     return{
-//       props:{data:data},
-//     }
-// }
-
-export async function getStaticProps(){
-  // Fetch data from external API
-  const res = await fetch(`https://jsonplaceholder.typicode.com/photos`)
-  const data = await res.json();
-  return{
-    props:{data:data},
-  }
-}
